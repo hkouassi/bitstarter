@@ -1,4 +1,5 @@
 
 var fs=require ('fs');
-var buffer=fs.readFileSync('./index.html');
-buffer.toString();
+var buf=new Buffer();
+ buf=fs.readFileSync('./index.html');
+buf.toString("utf-8");

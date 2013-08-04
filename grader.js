@@ -129,10 +129,14 @@ var outJson = JSON.stringify(checkJson, null, 4);
 );
     }
     else if (program.file) {
-    var checkJson = checkHtmlFile(program.file, program.checks);
-    
+  
+  var fs = require ('fs');
+   var checkJson = checkHtmlFile(program.file, program.checks)
     var outJson = JSON.stringify(checkJson, null, 4);
-    console.log(outJson);
+	var outfileJson = "JsonResult.txt";
+                                               
+	fs.writeFileSync(outfileJson, outJson);                                                                                        
+ console.log(outJson);
 	}
 }
 
